@@ -1,3 +1,3 @@
 # DaySharpener
-Let up keep your schedule sharp.
+Let up keep your day sharp.
 
