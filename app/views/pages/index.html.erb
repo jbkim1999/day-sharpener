@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <%= javascript_pack_tag 'hello_react' %>
+<% else %>
+  <div class="container"> 
+    <div class="intro">
+      <h1>DaySharpener.</h1>
+      <h2>Sharpen every second of your day.</h2>
+    </div>
+    <div class="user">
+      <div class="link">
+        Existing User?<br><br>
+        <%= link_to "Log In", new_user_session_path, class: "button"%>
+      </div>
+      <div class="link">
+        New User?<br><br>
+        <%= link_to "Sign Up", new_user_registration_path, class: "button"%>
+      </div>
+    </div>
+  </div>
+<% end %>

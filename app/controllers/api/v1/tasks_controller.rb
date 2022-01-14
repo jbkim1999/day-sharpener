@@ -2,6 +2,7 @@ module Api
   module V1
     class TasksController < ApplicationController
       before_action :authenticate_user!
+      protect_from_forgery with: :null_session
 
       def index
         @tasks = current_user.tasks
