@@ -1,0 +1,16 @@
+.container {
+  position: absolute;
+  top: 10vh;
+  left: 25vw;
+  width: 50vw;
+  height: 75vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-size: 12vh;
+  text-align: center;
+}

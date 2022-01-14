@@ -1,10 +1,11 @@
+<%= stylesheet_link_tag "index" %>
 <% if user_signed_in? %>
   <%= javascript_pack_tag 'hello_react' %>
 <% else %>
   <div class="container"> 
     <div class="intro">
-      <h1>DaySharpener.</h1>
-      <h2>Sharpen every second of your day.</h2>
+      <h1 class="title">DaySharpener.</h1>
+      <h2 class="subtitle">Sharpen every second of your day.</h2>
     </div>
     <div class="user">
       <div class="link">
