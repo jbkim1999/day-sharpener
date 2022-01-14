@@ -1,3 +1,9 @@
+.container {
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+}
+
 .user {
   position: absolute;
   bottom: 0;

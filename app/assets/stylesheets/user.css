@@ -2,15 +2,40 @@
   position: absolute;
   top: 10vh;
   left: 25vw;
-  width: 50vw;
-  height: 75vh;
-  background-color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-h2 {
-  font-size: 12vh;
+  flex-direction: column;
+  width: 50vw;
+  height: 80vh;
+  background-color: white;
   text-align: center;
 }
+
+.title h2 {
+  margin: 2vh;
+  font-size: 10vh;
+}
+
+.errors {
+  text-align: center;
+}
+
+.errors h2 {
+  font-size: 3vh;
+}
+
+.form-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.field {
+  margin: 1vh;
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+div.field_with_errors {
+  display: inline;
+} /* prevent line breaks */
