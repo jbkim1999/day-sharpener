@@ -1,3 +1,3 @@
 # DaySharpener
-Let up keep your day sharp.
+Sharpen every second of your day.
 
