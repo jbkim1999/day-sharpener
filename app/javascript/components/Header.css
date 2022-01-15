@@ -1,0 +1,18 @@
+.header-container {
+  position: relative;
+  height: 10vh;
+  border: solid black;
+  text-align: center;
+}
+
+.welcome-message {
+  margin-top: 3vh;
+  font-size: 3vh;
+}
+
+.button {
+  position: absolute;
+  top: 2vh;
+  left: 85vw;
+  font-size: 2vh;
+}
