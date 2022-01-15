@@ -4,13 +4,15 @@ import './App.css';
 import Header from './Header.js';
 import Categories from './Categories.js';
 import Window from './Window.js';
+import Footer from './Footer.js';
 
 const App = () => {
   return (
     <div className="container">
-      <Header className="header"/>
-      <Categories className="categories"/>
-      <Window className="window"/>
+      <Header />
+      <Categories />
+      <Window />
+      <Footer />
     </div>
   );
 };

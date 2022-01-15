@@ -1,0 +1,10 @@
+.window-container {
+  position: absolute;
+  left: 19vw;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 79vw;
+  height: 85vh;
+  border: solid black;
+}

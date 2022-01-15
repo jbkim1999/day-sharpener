@@ -1,8 +1,10 @@
 import React from 'react'
+import './Window.css'
 
 const Window = () => {
   return (
-    <div>
+    <div className="window-container">
+      I am a window.
     </div>
   );
 };

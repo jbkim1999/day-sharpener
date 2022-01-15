@@ -1,0 +1,10 @@
+.categories-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  width: 19vw;
+  height: 85vh;
+  border: solid black;
+}

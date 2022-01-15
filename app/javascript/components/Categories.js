@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './Categories.css';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -14,14 +15,17 @@ const Categories = () => {
   }, []);
 
   return (
-    <div>
+    <div className="categories-container">
       <h3>Task Category</h3>
       <ul>
         {categories.map(category => {
           return (
-            <li key={category.id}>
-              {category.name}
-            </li>
+            <div className="categories">
+              <li key={category.id}>
+                {category.name}
+              </li>
+              <button>X</button>
+            </div>
           );
         })}
       </ul>
