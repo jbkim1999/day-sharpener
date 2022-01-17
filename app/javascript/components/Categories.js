@@ -21,6 +21,11 @@ const Categories = (props) => {
   const handleCreateCategory = () => {
     props.switchWindow("CreateCategory");
   }
+  
+  const deleteCategory = (event) => {
+    fetch(`/api/v1/categories/${event.target.value}`, { method: 'DELETE' });
+    window.location.reload(); // refresh without changing the window
+  }
 
   return (
     <div className="categories-container">
@@ -42,7 +47,7 @@ const Categories = (props) => {
                 <button key={category.id} className="category" value={category.name}>
                   {category.name}
                 </button>
-                <button className="delete" value={category.name}>
+                <button className="delete" onClick={deleteCategory} value={category.id}>
                   X
                 </button>
               </div>

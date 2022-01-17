@@ -5,3 +5,9 @@
   width: 98vw;
   text-align: center;
 }
+
+.sign-out {
+  position: absolute;
+  left: 88vw;
+  color: black;
+}

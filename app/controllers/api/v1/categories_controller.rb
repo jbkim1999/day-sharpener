@@ -8,7 +8,7 @@ module Api
       def index
         @categories = current_user.categories
         respond_to do |format|
-          format.json { render :json => @categories}
+          format.json { render :json => @categories }
         end
       end
 
@@ -24,7 +24,7 @@ module Api
       end
 
       def destroy
-        @category = Category.find_by(params[:id])
+        @category = Category.find(params[:id])
         if @category.destroy
           head :no_content
         else

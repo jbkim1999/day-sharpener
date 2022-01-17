@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header />
+      <Header switchWindow={switchWindow} />
       <Categories status={status} switchWindow={switchWindow} />
       <Windows status={status} switchWindow={switchWindow} />
       <Footer />
