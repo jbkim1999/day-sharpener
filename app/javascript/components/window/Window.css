@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: scroll;
+  width: 79vw;
 }
 
 .form-container {
@@ -21,5 +23,41 @@
 }
 
 .submit-button {
+  width: 10vw;
+}
+
+.return-today {
+  color: grey;
+  text-decoration: underline;
+}
+
+.return-today:hover {
+  cursor: pointer;
+}
+
+table {
+  width: 60vw;
+}
+
+.table-button-header {
+  width: 5vw;
+}
+
+.category-heading {
   width: 15vw;
+}
+
+.description-heading {
+  width: 30vw;
+}
+
+table, th, td {
+  border-bottom: 0.5px solid darkgrey;
+  border-collapse: collapse;
+  padding: 0.5vh;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: grey;
 }

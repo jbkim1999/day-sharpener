@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   root 'pages#index'
-
+  
   namespace :api do
     namespace :v1 do
       resources :tasks, only: [:index, :create, :update, :destroy]
+        get 'tasks/:id/complete', to: 'tasks#complete' # Adding custom routes
       resources :categories, only: [:index, :create, :destroy]
       resources :users, only: [:index]
     end

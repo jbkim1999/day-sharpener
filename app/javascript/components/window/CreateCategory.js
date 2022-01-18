@@ -46,6 +46,10 @@ const CreateCategory = (props) => {
     }); // VERY IMPORTANT
   }
 
+  const switchWindow = () => {
+    props.switchWindow("TodayTask");
+  }
+
   return (
     <div className="window-container">
       <h1>Create a category to organize your tasks.</h1>
@@ -59,6 +63,7 @@ const CreateCategory = (props) => {
           <label htmlFor="name">Name for a new category: </label>
           <input onChange={handleChange} value={categoryParams.name} type="text" name="name" id="name"/>
         </div>
+
         <button type="submit" className="submit-button">Create Category</button>
         {/* { 
           error && 
@@ -67,6 +72,8 @@ const CreateCategory = (props) => {
           </div>
         } */}
       </form>
+      <br/>
+      <p onClick={switchWindow} className="return-today">Return to Today</p>
     </div>
   )
 };

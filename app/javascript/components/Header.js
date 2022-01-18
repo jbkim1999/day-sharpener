@@ -21,7 +21,7 @@ const Header = (props) => {
   return (
     <div className="header-container">
       <h1 className="welcome-message">Schedule is being sharpened, {user.username}.</h1>
-      <a onClick={switchWindow} className="button" >Create Task</a>
+      <a onClick={switchWindow} className="create-task-button" >Create Task</a>
     </div>
   );
 };

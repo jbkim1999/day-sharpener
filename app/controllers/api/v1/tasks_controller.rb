@@ -43,6 +43,12 @@ module Api
         end
       end
 
+      def complete
+        @task = Task.find(params[:id])
+        @completed = current_user.categories.find_by(name: "Completed")
+        @completed.tasks << @task
+      end
+      
       private
       def task_params
         params.require(:task).permit(:description, :due_date, :category_id)

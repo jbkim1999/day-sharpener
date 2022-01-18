@@ -11,9 +11,14 @@
   font-size: 32px;
 }
 
-.button {
+.create-task-button {
   position: absolute;
   top: 2vh;
   left: 85vw;
+  border: solid black;
+  padding: 1vw;
+  cursor: pointer;
   font-size: 16px;
+  text-decoration: none;
+  color: black;
 }

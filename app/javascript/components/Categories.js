@@ -34,8 +34,8 @@ const Categories = (props) => {
         {categories.map(category => {
           if (category.name === "Default") {
             return (
-            <div key={category.id} className="categories">
-              <button className="category" value={category.name}>
+            <div key={category.id} className="category-buttons">
+              <button className="category-button" value={category.name}>
                 {category.name}
               </button>
             </div>
@@ -43,19 +43,19 @@ const Categories = (props) => {
           }
           else if (category.name !== "Completed") {
             return (
-              <div key={category.id} className="categories">
-                <button key={category.id} className="category" value={category.name}>
+              <div key={category.id} className="category-buttons">
+                <button key={category.id} className="category-button" value={category.name}>
                   {category.name}
                 </button>
-                <button className="delete" onClick={deleteCategory} value={category.id}>
+                <button className="category-delete-button" onClick={deleteCategory} value={category.id}>
                   X
                 </button>
               </div>
             );
           }
         })}
-        <button className="completed" value="Completed">View completed tasks</button>
-        <button className="create" onClick={handleCreateCategory}>Create new category</button>
+        <button className="completed-tasks-button" value="Completed">View completed tasks</button>
+        <button className="create-category-button" onClick={handleCreateCategory}>Create new category</button>
       </div>
     </div>
   );

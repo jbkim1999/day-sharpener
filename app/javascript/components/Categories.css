@@ -14,19 +14,20 @@
   align-items: center;
 }
 
-.categories {
+.category-buttons {
   margin: 1vh;
 }
 
-.completed {
-  margin: 1vh;
-}
-
-.create {
-  margin: 1vh;
-}
-
-.category {
+.category-button {
   margin-right: 5px;
   margin-left: 5px;
 }
+
+.completed-tasks-button {
+  margin: 1vh;
+}
+
+.create-category-button {
+  margin: 1vh;
+}
+

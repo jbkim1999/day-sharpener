@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './Window.css';
+import moment from 'moment';
 
 const CreateTask = (props) => {
   const [categories, setCategories] = useState([]); // for drop-down
-  const [taskParams, setTaskParams] = useState({ category_id: "", description: "", due_date: ""});
+  const [taskParams, setTaskParams] = useState({ category_id: "", description: "", due_date: moment().format("YYYY-MM-DD")});
   // const [error, setError] = useState('');
   let defaultId; // for Default selection
 
@@ -43,7 +44,7 @@ const CreateTask = (props) => {
       body: JSON.stringify(taskParams), // body data type must match "Content-Type" header
     })
     .then(() => {
-      setTaskParams({ category: "Default", description: "", due_date: ""});
+      setTaskParams({ category: "Default", description: "", due_date: moment().format("YYYY-MM-DD")});
       // setError('');
     })
     // .catch((response) => {
@@ -63,13 +64,17 @@ const CreateTask = (props) => {
     }); // VERY IMPORTANT
   }
 
+  const switchWindow = () => {
+    props.switchWindow("TodayTask");
+  }
+
   return (
     <div className="window-container">
       <h1>Which task do you wish to sharpen?</h1>
       <form onSubmit={handleSubmit} className="form-container">
+
         <div className="field">
           <label htmlFor="category_id">Choose a category: </label>
-
           <select name="category_id" id="category_id" onChange={handleChange} value={taskParams.category_id}>
             {categories.map(category => {
               if (category.name !== "Completed") {
@@ -80,16 +85,19 @@ const CreateTask = (props) => {
             })}
           </select>
         </div>
+
         <div className="field">
           <label htmlFor="description">Description for the task: </label>
           <br />
           <textarea onChange={handleChange} value={taskParams.description} name="description" id="description"
             className="description-text" required/>
         </div>
+
         <div className="field">
           <label htmlFor="due_date">Due date for your task: </label>
           <input type="date" onChange={handleChange} value={taskParams.due_date} name="due_date" id="due_date" required/>
         </div>
+
         <button type="submit" className="submit-button">Sharpen this!</button>
         {/* {
           error && 
@@ -98,6 +106,8 @@ const CreateTask = (props) => {
           </div>
         } */}
       </form>
+      <br/>
+      <p onClick={switchWindow} className="return-today">Return to Today</p>
     </div>
   )
 };
