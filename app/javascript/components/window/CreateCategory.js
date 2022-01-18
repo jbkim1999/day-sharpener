@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import './Window.css';
 
+// Error handling from Rails validation needed in the future
+
 const CreateCategory = (props) => {
   const [categoryParams, setCategoryParams] = useState({ name: "" });
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
 
   const handleChange = (event) => {
     setCategoryParams(Object.assign({}, categoryParams, {[event.target.name]: event.target.value}));
@@ -26,19 +28,19 @@ const CreateCategory = (props) => {
     })
     .then(() => {
       setCategoryParams({ name: "" });
-      setError('');
+      // setError('');
     })
-    .catch((response) => {
-      let error;
-      switch (response.message) {
-        case "Request failed with status code 401":
-          error = 'Please log in to leave a review.';
-          break;
-        default:
-          error = 'Something went wrong.';
-      };
-      setError(error);
-    })
+    // .catch((response) => {
+    //   let error;
+    //   switch (response.message) {
+    //     case "Request failed with status code 401":
+    //       error = 'Please log in to leave a review.';
+    //       break;
+    //     default:
+    //       error = 'Something went wrong.';
+    //   };
+    //   setError(error);
+    // })
     .finally(() => {
       props.switchWindow("TodayTask");
     }); // VERY IMPORTANT
@@ -47,13 +49,23 @@ const CreateCategory = (props) => {
   return (
     <div className="window-container">
       <h1>Create a category to organize your tasks.</h1>
-      <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} value={categoryParams.name} type="text" name="name" />
-        <button type="submit">Create Category</button>
-        { 
+      <p>
+        Kindly note that your category name must be <strong>unique</strong>.
+        <br/>
+        Moreover, you can't name your category "Default" or "Completed," as they are pre-made.
+      </p>
+      <form onSubmit={handleSubmit} className="form-container">
+        <div className="field">
+          <label htmlFor="name">Name for a new category: </label>
+          <input onChange={handleChange} value={categoryParams.name} type="text" name="name" id="name"/>
+        </div>
+        <button type="submit" className="submit-button">Create Category</button>
+        {/* { 
           error && 
-          <Error>{error}</Error>
-        }
+          <div>
+            {error}
+          </div>
+        } */}
       </form>
     </div>
   )

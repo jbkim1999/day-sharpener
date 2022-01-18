@@ -2,7 +2,8 @@ module Api
   module V1
     class TasksController < ApplicationController
       before_action :authenticate_user!
-      protect_from_forgery with: :null_session
+      skip_before_action :verify_authenticity_token
+      # protect_from_forgery with: :null_session
 
       def index
         @tasks = current_user.tasks
@@ -23,7 +24,7 @@ module Api
       end
 
       def update # May not need current_user?
-        @task = Task.find_by(params[:id])
+        @task = Task.find(params[:id])
         if @task.update(task_params)
           respond_to do |format|
             format.json { render :json => @task }
@@ -34,7 +35,7 @@ module Api
       end
 
       def destroy # May not need current_user as well?
-        @task = Task.find_by(params[:id])
+        @task = Task.find(params[:id])
         if @task.destroy
           head :no_content
         else

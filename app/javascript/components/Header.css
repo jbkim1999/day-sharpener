@@ -7,13 +7,13 @@
 }
 
 .welcome-message {
-  margin-top: 3vh;
-  font-size: 3vh;
+  margin-top: 2.5vh;
+  font-size: 32px;
 }
 
 .button {
   position: absolute;
   top: 2vh;
   left: 85vw;
-  font-size: 2vh;
+  font-size: 16px;
 }

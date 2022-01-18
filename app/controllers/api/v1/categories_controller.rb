@@ -25,6 +25,10 @@ module Api
 
       def destroy
         @category = Category.find(params[:id])
+        @default = Category.find_by(name: "Default")
+        @category.tasks.each do |task|
+          task.category = @default
+        end
         if @category.destroy
           head :no_content
         else
