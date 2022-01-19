@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   
+  # Need more understanding on advanced routes
   namespace :api do
     namespace :v1 do
       resources :tasks, only: [:index, :create, :update, :destroy]

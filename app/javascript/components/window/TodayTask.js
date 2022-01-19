@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-const TodayTask = (props) => {
+const TodayTask = () => {
   const [tasks, setTasks] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -25,21 +25,21 @@ const TodayTask = (props) => {
   const completeTask = (event) => {
     fetch(`/api/v1/tasks/${event.target.value}/complete`, { method: 'GET' });
     window.location.reload();
-  }
+  };
 
   const deleteTask = (event) => {
     fetch(`/api/v1/tasks/${event.target.value}`, { method: 'DELETE' });
     window.location.reload(); // refresh without changing the window
-  }
+  };
 
   const editTask = (event) => {
     console.log(event.target.value);
-  }
+  };
 
   return (
     <div className="window-container">
       <h1>Today is {moment().format("MMMM Do, YYYY.")}</h1>
-      <h2>Here are your tasks that are due today.</h2>
+      <h2>Here are your tasks that you need to sharpen by today.</h2>
       <table>
         <thead>
           <tr>

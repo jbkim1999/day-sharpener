@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './Window.css';
 
 // Error handling from Rails validation needed in the future

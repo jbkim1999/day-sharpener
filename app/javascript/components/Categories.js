@@ -4,6 +4,7 @@ import './Categories.css';
 const Categories = (props) => {
   const [categories, setCategories] = useState([]);
   const [statusCheck, setStatusCheck] = useState("");
+  let completedCategoryId;
 
   const fetchCategories = async () => {
     const response = await fetch("/api/v1/categories.json");
@@ -20,12 +21,16 @@ const Categories = (props) => {
 
   const handleCreateCategory = () => {
     props.switchWindow("CreateCategory");
-  }
+  };
   
   const deleteCategory = (event) => {
     fetch(`/api/v1/categories/${event.target.value}`, { method: 'DELETE' });
     window.location.reload(); // refresh without changing the window
-  }
+  };
+
+  const switchCategoryTask = (categoryId, categoryName) => {
+    props.switchCategoryTask({categoryId: categoryId, categoryName: categoryName});
+  };
 
   return (
     <div className="categories-container">
@@ -35,7 +40,7 @@ const Categories = (props) => {
           if (category.name === "Default") {
             return (
             <div key={category.id} className="category-buttons">
-              <button className="category-button" value={category.name}>
+              <button className="category-button" onClick={() => switchCategoryTask(category.id, category.name)}>
                 {category.name}
               </button>
             </div>
@@ -44,7 +49,7 @@ const Categories = (props) => {
           else if (category.name !== "Completed") {
             return (
               <div key={category.id} className="category-buttons">
-                <button key={category.id} className="category-button" value={category.name}>
+                <button key={category.id} className="category-button" onClick={() => switchCategoryTask(category.id, category.name)}>
                   {category.name}
                 </button>
                 <button className="category-delete-button" onClick={deleteCategory} value={category.id}>
@@ -53,8 +58,11 @@ const Categories = (props) => {
               </div>
             );
           }
+          else if (category.name === "Completed") {
+            completedCategoryId = category.id;
+          }
         })}
-        <button className="completed-tasks-button" value="Completed">View completed tasks</button>
+        <button className="completed-tasks-button" onClick={() => switchCategoryTask(completedCategoryId, "Completed")}>View completed tasks</button>
         <button className="create-category-button" onClick={handleCreateCategory}>Create new category</button>
       </div>
     </div>

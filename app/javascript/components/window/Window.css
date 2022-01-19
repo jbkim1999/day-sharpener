@@ -51,6 +51,18 @@ table {
   width: 30vw;
 }
 
+.completed-description-heading {
+  width: 45vw;
+}
+
+.completed-date-heading {
+  width: 15vw;
+}
+
+.date-heading {
+  width: 15vw;
+}
+
 table, th, td {
   border-bottom: 0.5px solid darkgrey;
   border-collapse: collapse;
