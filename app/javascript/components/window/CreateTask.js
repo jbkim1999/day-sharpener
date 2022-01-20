@@ -109,7 +109,7 @@ const CreateTask = (props) => {
       <br/>
       <p onClick={switchWindow} className="return-today">Return to Today</p>
     </div>
-  )
+  );
 };
 
 export default CreateTask;

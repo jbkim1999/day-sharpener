@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import './Window.css';
 
-const TodayTask = () => {
+const TodayTask = (props) => {
   const [tasks, setTasks] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -33,7 +34,7 @@ const TodayTask = () => {
   };
 
   const editTask = (event) => {
-    console.log(event.target.value);
+    props.editTask(event.target.value);
   };
 
   return (
@@ -64,7 +65,7 @@ const TodayTask = () => {
                 <td><button onClick={completeTask} value={task.id}>Complete Task</button></td>
                 <td>{categoryName}</td>
                 <td>{task.description}</td>
-                <td><button onClick={editTask}>Edit Task</button></td>
+                <td><button onClick={editTask} value={task.id}>Edit Task</button></td>
                 <td><button onClick={deleteTask} value={task.id}>Delete Task</button></td>
               </tr>
             </tbody>

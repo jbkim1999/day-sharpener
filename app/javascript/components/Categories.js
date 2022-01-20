@@ -2,9 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './Categories.css';
 
 const Categories = (props) => {
+  const [tasks, setTasks] = useState([]);
   const [categories, setCategories] = useState([]);
   const [statusCheck, setStatusCheck] = useState("");
   let completedCategoryId;
+
+  const fetchTasks = async () => {
+    const response = await fetch("/api/v1/tasks.json");
+    const tasksData = await response.json();
+    setTasks(tasksData);
+  };
 
   const fetchCategories = async () => {
     const response = await fetch("/api/v1/categories.json");
@@ -15,6 +22,7 @@ const Categories = (props) => {
   useEffect(() => {
     if (statusCheck !== props.status) {
       fetchCategories();
+      fetchTasks();
       setStatusCheck(props.status);
     }
   }); // VERY IMPORTANT!
@@ -37,11 +45,12 @@ const Categories = (props) => {
       <h3>Task Category</h3>
       <div className="category-container">
         {categories.map(category => {
+          let tasksNumber = tasks.filter(task => task.category_id === category.id).length;
           if (category.name === "Default") {
             return (
             <div key={category.id} className="category-buttons">
               <button className="category-button" onClick={() => switchCategoryTask(category.id, category.name)}>
-                {category.name}
+                {category.name}: {tasksNumber}
               </button>
             </div>
             );
@@ -50,7 +59,7 @@ const Categories = (props) => {
             return (
               <div key={category.id} className="category-buttons">
                 <button key={category.id} className="category-button" onClick={() => switchCategoryTask(category.id, category.name)}>
-                  {category.name}
+                  {category.name}: {tasksNumber}
                 </button>
                 <button className="category-delete-button" onClick={deleteCategory} value={category.id}>
                   X

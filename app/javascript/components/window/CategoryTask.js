@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Window.css';
 
 const CategoryTask = (props) => {
   const [tasks, setTasks] = useState([]);
@@ -26,7 +27,7 @@ const CategoryTask = (props) => {
   };
 
   const editTask = (event) => {
-    console.log(event.target.value);
+    props.editTask(event.target.value);
   };
 
   const switchWindow = () => {
@@ -55,7 +56,7 @@ const CategoryTask = (props) => {
                   <td><button onClick={completeTask} value={task.id}>Complete Task</button></td>
                   <td>{task.description}</td>
                   <td>{task.due_date}</td>
-                  <td><button onClick={editTask}>Edit Task</button></td>
+                  <td><button onClick={editTask} value={task.id}>Edit Task</button></td>
                   <td><button onClick={deleteTask} value={task.id}>Delete Task</button></td>
                 </tr>
               </tbody>
@@ -94,7 +95,7 @@ const CategoryTask = (props) => {
         <br/>
         <p onClick={switchWindow} className="return-today">Return to Today</p>
       </div>
-    )
+    );
   }
 };
 
