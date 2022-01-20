@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
-import '../../stylesheets/Window.css';
+import '../../../assets/stylesheets/Window.css';
 
 const TodayTask = (props) => {
   const [tasks, setTasks] = useState([]);

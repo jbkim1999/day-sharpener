@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../stylesheets/Header.css';
+import '../../assets/stylesheets/Header.css';
 
 const Header = (props) => {
   const [user, setUser] = useState({});
