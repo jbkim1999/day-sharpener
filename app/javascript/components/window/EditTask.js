@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Window.css';
+import '../../../assets/stylesheets/Window.css';
 
 // Edit form on Rails? 
 const EditTask = (props) => {
