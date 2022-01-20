@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../assets/stylesheets/Window.css';
+import '../../stylesheets/Window.css';
 
 // Error handling from Rails validation needed in the future
 

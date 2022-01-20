@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../assets/stylesheets/Categories.css';
+import '../stylesheets/Categories.css';
 
 const Categories = (props) => {
   const [tasks, setTasks] = useState([]);

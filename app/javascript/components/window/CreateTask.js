@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../../assets/stylesheets/Window.css';
+import '../../stylesheets/Window.css';
 import moment from 'moment';
 
 const CreateTask = (props) => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../assets/stylesheets/Windows.css';
+import '../stylesheets/Windows.css';
 
 import CategoryTask from "./window/CategoryTask.js";
 import CreateCategory from "./window/CreateCategory.js";
