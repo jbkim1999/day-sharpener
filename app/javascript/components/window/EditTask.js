@@ -3,7 +3,7 @@ import '../../../assets/stylesheets/Window.css';
 
 // Edit form on Rails? 
 const EditTask = (props) => {
-  const [categories, setCategories] = useState([]); // for drop-down
+  const [categories, setCategories] = useState([]); // For drop-down
   const [taskParams, setTaskParams] = useState({ category_id: "", description: "", due_date: ""});
 
   const fetchCategories = async () => {

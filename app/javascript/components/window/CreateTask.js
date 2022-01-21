@@ -3,10 +3,10 @@ import '../../../assets/stylesheets/Window.css';
 import moment from 'moment';
 
 const CreateTask = (props) => {
-  const [categories, setCategories] = useState([]); // for drop-down
+  const [categories, setCategories] = useState([]); // For drop-down
   const [taskParams, setTaskParams] = useState({ category_id: "", description: "", due_date: moment().format("YYYY-MM-DD")});
   // const [error, setError] = useState('');
-  let defaultId; // for Default selection
+  let defaultId; // For Default selection
 
   const fetchCategories = async () => {
     const response = await fetch("/api/v1/categories.json");

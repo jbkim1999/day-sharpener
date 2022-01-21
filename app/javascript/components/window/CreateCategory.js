@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../../../assets/stylesheets/Window.css';
 
 // Error handling from Rails validation needed in the future
-
 const CreateCategory = (props) => {
   const [categoryParams, setCategoryParams] = useState({ name: "" });
   // const [error, setError] = useState('');

@@ -3,6 +3,7 @@ import '../../assets/stylesheets/Categories.css';
 
 const Categories = (props) => {
   const [tasks, setTasks] = useState([]);
+  // For telling the number of tasks for each category
   const [categories, setCategories] = useState([]);
   const [statusCheck, setStatusCheck] = useState("");
   let completedCategoryId;
@@ -25,7 +26,7 @@ const Categories = (props) => {
       fetchTasks();
       setStatusCheck(props.status);
     }
-  }); // VERY IMPORTANT!
+  }); // VERY IMPORTANT! To prevent infinite loop
 
   const handleCreateCategory = () => {
     props.switchWindow("CreateCategory");
@@ -33,7 +34,7 @@ const Categories = (props) => {
   
   const deleteCategory = (event) => {
     fetch(`/api/v1/categories/${event.target.value}`, { method: 'DELETE' });
-    window.location.reload(); // refresh without changing the window
+    window.location.reload(); // Refresh without changing the window
   };
 
   const switchCategoryTask = (categoryId, categoryName) => {

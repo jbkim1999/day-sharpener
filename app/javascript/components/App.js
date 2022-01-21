@@ -9,6 +9,7 @@ import Footer from './Footer.js';
 const App = () => {
   const [status, setStatus] = useState("TodayTask");
   const [categoryInfo, setCategoryInfo] = useState({categoryId: 0, categoryName: ""});
+  // Used for CategoryTask window
 
   const switchWindow = (statusTo) => {
     setStatus(statusTo);
