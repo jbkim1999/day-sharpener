@@ -3,7 +3,7 @@
 Name: KIM Jungbae <br />
 Matriculation Number: A0194438U
 
-Now live @ https://day-sharpener.herokuapp.com/ <br />
+Now live @ https://day-sharpener.herokuapp.com/ (Currently down) <br /> 
 Built with React.js + Ruby on Rails.
 
 ## User Manual
